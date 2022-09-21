@@ -36,7 +36,7 @@ function fill_squares (){
         square.style.backgroundColor = 'white';
         
         
-        square.addEventListener('mouseenter',function () {
+        square.addEventListener('mousedown',function () {
             square.style.backgroundColor = color;
         })
 
@@ -55,7 +55,7 @@ function add_events () {
     const nodes = document.getElementById('grid').childNodes;
     for (let i = 0; i < nodes.length; i++) {
 
-        nodes[i].addEventListener('mouseenter', function () {
+        nodes[i].addEventListener('mousedown', function () {
             nodes[i].style.backgroundColor = 'black;'
         })
     }

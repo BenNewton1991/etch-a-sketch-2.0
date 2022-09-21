@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="header">
-
+        <h1>Etch-A-Sketch: 2.0</h1>
     </div>
     <div class ="main">
         <div class="sidebar">
@@ -21,13 +21,13 @@
                 Toggle grid
             </button>
             <button id="mode_click" class="btn_1">
-                Click Color
+                Mode Click
             </button>
             <button id="mode_hover" class="btn_1">
-                Click Color
+                Mode Hover
             </button>
-            <input type="range" min="1" max="64" value ="25" class="slider" id="myRange" oninput="this.nextElementSibling.value = this.value+ ' x ' + this.value " onchange="updateSlider(this.Value)">
-            <output>25 x 25</output>
+            <input type="range" min="1" max="64" value ="25" class="slider" id="myRange" oninput="this.nextElementSibling.value = this.value+ ' x ' + this.value + 'Grid' " onchange="updateSlider(this.Value)">
+            <output>25 x 25 Grid</output>
 
             <div class="colors">
                 <div id='red' class="color">
@@ -59,8 +59,13 @@
 
         </div>
 
+        
+
     </div>
     
+    <div class="footer">
+        <h3>Copyright © Ben Newton 2022</h1>
+    </div>
     
     
 </body>
