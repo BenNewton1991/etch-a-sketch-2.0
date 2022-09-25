@@ -2,11 +2,14 @@
 let square_number = 25;
 const button = document.getElementById('refresh');
 let color = 'black';
+let color_mode_click = true; 
 
 
 
 button.addEventListener('click', fill_squares)
 
+
+// Adds squares to the grid.
 
 function fill_squares (){
     const grid = document.getElementById('grid');
@@ -34,11 +37,13 @@ function fill_squares (){
         square.style.padding = '0px';
         square.style.margin = '0px';
         square.style.backgroundColor = 'white';
+        square.classList.add('square_child')
         
         
         square.addEventListener('mousedown',function () {
             square.style.backgroundColor = color;
         })
+        
 
         grid.appendChild(square);
     }
@@ -49,7 +54,7 @@ function fill_squares (){
 fill_squares();
 
 
-
+// Adds mouse down functionality to child squares. 
 
 function add_events () {
     const nodes = document.getElementById('grid').childNodes;
@@ -61,6 +66,9 @@ function add_events () {
     }
 
 }
+
+
+// Adds functionality to toggle grid. 
 
 let grid_on = true;
 const btn_2 = document.getElementById('add-remove');
@@ -86,6 +94,8 @@ function add_remove_grid () {
     }                 
 }
 
+// Functionality to change grid size via square number variable.
+
 let slider = document.getElementById('myRange')
 square_number = slider.value;
 
@@ -99,6 +109,8 @@ function updateSlider() {
     fill_squares();
 }
 
+
+// Color change functionality. 
 
 document.getElementById('red').addEventListener('click', function () {
     color = 'red'
@@ -131,6 +143,8 @@ document.getElementById('white').addEventListener('click', function () {
 
 })
 
+// Function to allow mouse over color adding.
+
 function set_color () {
     const nodes = document.getElementById('grid').childNodes;
     for (i = 0; i < nodes.length; i++){
@@ -140,6 +154,38 @@ function set_color () {
     }
     
 }
+
+
+let node = '';
+
+function color_function () {
+    node.style.backgroundColor = color;
+}
+
+
+const hover_button = document.getElementById('mode_hover')
+
+hover_button.addEventListener('click', function () {
+    const nodes = document.getElementById('grid').childNodes;
+    for (i = 0; i < nodes.length; i++) {
+
+        let node = nodes[i];
+        node.addEventListener('mouseover', function() {
+            node.style.backgroundColor = color;
+        })        
+        grid.replaceChild(node, nodes[i]);
+
+    }
+
+    console.log('worked')
+    
+})
+ 
+
+
+
+// Function for mouse down color adding. 
+
 
 /*
 
